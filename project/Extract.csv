@@ -1,0 +1,144 @@
+country,alpha_2_code,time_period,obs_value
+Afghanistan,AF,2021,4000000
+Albania,AL,2021,114100
+Algeria,DZ,2021,700500
+Angola,AO,2021,2700000
+Argentina,AR,2021,2700000
+Armenia,AM,2021,158700
+Azerbaijan,AZ,2021,383200
+Bangladesh,BD,2021,41600000
+Barbados,BB,2021,18800
+Belarus,BY,2021,302700
+Belize,BZ,2021,38400
+Benin,BJ,2021,1200000
+Bhutan,BT,2021,79200
+"Bolivia, Plurinational State of",BO,2021,827200
+Bolivia,BO,2021,827200
+Bosnia and Herzegovina,BA,2021,132200
+Botswana,BW,2021,18300
+Brazil,BR,2021,21600000
+Burkina Faso,BF,2021,3000000
+Burundi,BI,2021,650900
+Cape Verde,CV,2021,26600
+Cambodia,KH,2021,1200000
+Cameroon,CM,2021,2600000
+Central African Republic,CF,2021,770900
+Chad,TD,2021,2200000
+China,CN,2021,35400000
+Colombia,CO,2021,4500000
+Comoros,KM,2021,86600
+Congo,CG,2021,447200
+Costa Rica,CR,2021,364100
+Cuba,CU,2021,1300000
+Côte d'Ivoire,CI,2021,2400000
+Ivory Coast,CI,2021,2400000
+"Korea, Democratic People's Republic of",KP,2021,12500
+"Congo, the Democratic Republic of the",CD,2021,7600000
+Denmark,DK,2021,19700
+Djibouti,DJ,2021,31400
+Dominican Republic,DO,2021,1400000
+Ecuador,EC,2021,1300000
+Egypt,EG,2021,8700000
+El Salvador,SV,2021,733700
+Equatorial Guinea,GQ,2021,152500
+Eritrea,ER,2021,506300
+Swaziland,SZ,2021,43300
+Ethiopia,ET,2021,18600000
+Fiji,FJ,2021,30200
+Gabon,GA,2021,188000
+Gambia,GM,2021,248900
+Georgia,GE,2021,257100
+Ghana,GH,2021,2600000
+Guatemala,GT,2021,2000000
+Guinea,GN,2021,1800000
+Guinea-Bissau,GW,2021,169800
+Guyana,GY,2021,81400
+Haiti,HT,2021,614400
+Honduras,HN,2021,1200000
+India,IN,2021,216600000
+Indonesia,ID,2021,25500000
+"Iran, Islamic Republic of",IR,2021,10000000
+Iraq,IQ,2021,3300000
+Jamaica,JM,2021,87800
+Jordan,JO,2021,503600
+Kazakhstan,KZ,2021,503000
+Kenya,KE,2021,4500000
+Kiribati,KI,2021,8700
+Kyrgyzstan,KG,2021,269600
+Lao People's Democratic Republic,LA,2021,775400
+Lebanon,LB,2021,259600
+Lesotho,LS,2021,179800
+Liberia,LR,2021,518400
+Lithuania,LT,2021,5900
+Madagascar,MG,2021,3500000
+Malawi,MW,2021,2500000
+Maldives,MV,2021,39700
+Mali,ML,2021,3200000
+Marshall Islands,MH,2021,3700
+Mauritania,MR,2021,556700
+Mexico,MX,2021,10200000
+Mongolia,MN,2021,89600
+Montenegro,ME,2021,21400
+Morocco,MA,2021,2300000
+Mozambique,MZ,2021,4800000
+Myanmar,MM,2021,3700000
+Burma,MM,2021,3700000
+Namibia,,2021,76400
+Nauru,NR,2021,800
+Nepal,NP,2021,5300000
+Nicaragua,NI,2021,1100000
+Niger,NE,2021,5100000
+Nigeria,NG,2021,24400000
+"Macedonia, the former Yugoslav Republic of",MK,2021,102400
+Norway,NO,2021,300
+Oman,OM,2021,286800
+Pakistan,PK,2021,19400000
+Panama,PA,2021,373100
+Papua New Guinea,PG,2021,822000
+Paraguay,PY,2021,490400
+Peru,PE,2021,2200000
+Philippines,PH,2021,5500000
+Qatar,QA,2021,40000
+"Moldova, Republic of",MD,2021,167000
+Russian Federation,RU,2021,5400000
+Russia,RU,2021,5400000
+Rwanda,RW,2021,467900
+Saint Lucia,LC,2021,11400
+Samoa,WS,2021,5500
+Sao Tome and Principe,ST,2021,19500
+Senegal,SN,2021,1800000
+Serbia,RS,2021,332400
+Sierra Leone,SL,2021,998200
+Singapore,SG,2021,2900
+Solomon Islands,SB,2021,48500
+Somalia,SO,2021,1800000
+South Africa,ZA,2021,1800000
+South Sudan,SS,2021,1200000
+Sri Lanka,LK,2021,983400
+"Palestinian Territory, Occupied",PS,2021,338700
+Sudan,SD,2021,4900000
+Suriname,SR,2021,62700
+Syrian Arab Republic,SY,2021,1200000
+Tajikistan,TJ,2021,323800
+Thailand,TH,2021,5700000
+Timor-Leste,TL,2021,73800
+Togo,TG,2021,631600
+Tonga,TO,2021,2200
+Trinidad and Tobago,TT,2021,77200
+Tunisia,TN,2021,200100
+Turkmenistan,TM,2021,141300
+Turks and Caicos Islands,TC,2021,1600
+Tuvalu,TV,2021,400
+Turkey,TR,2021,6600000
+Uganda,UG,2021,5100000
+Ukraine,UA,2021,2000000
+United Kingdom,GB,2021,6400
+"Tanzania, United Republic of",TZ,2021,6600000
+Uruguay,UY,2021,164000
+Uzbekistan,UZ,2021,1100000
+Vanuatu,VU,2021,21400
+Viet Nam,VN,2021,4500000
+Vietnam,VN,2021,4500000
+Yemen,YE,2021,4200000
+Zambia,ZM,2021,2000000
+Zimbabwe,ZW,2021,1600000

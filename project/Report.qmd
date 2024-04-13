@@ -1,0 +1,182 @@
+---
+title: "<span style='color:purple'>***Children. Not Wives.***</span>"
+subtitle: "<span style='color:purple'>*A glimples at the stark realities of the United Nations Indicators*</span>"
+author: "Albha Oman"
+date: "04-13-2024"
+format: 
+ html: 
+    theme: cerulean
+    backgroundcolor: pink
+    toc: TRUE
+    toc-title: <span style='color:purple'>***Contents***</span>
+    
+execute: 
+  echo: false
+  warning: false
+  message: false
+  toc: true
+---
+<img src="https://images.squarespace-cdn.com/content/v1/57c42d429de4bb0a96ddfa3f/643e170f-8a5c-4813-b551-5bd00201f937/E_INVERTED+SDG+goals_icons-individual-RGB-05.png?format=1500w" width=150, height=150>
+
+As some countries move and progress towards *equality and freedom*, others are left behind. A recent study by **UNICEF, 2021**, identified that many ***young girls and women are first married or in union before the age of 18***. The truths and realities of the situation needs to be exposed and girls must be helped. ***Children are meant to be children.*** Girls under 18 should be cared for and loved by their families, not preparing for a family of their own. This report aims to reveal and educate you on the stark reality of underage marriages around the world.
+
+```{r}
+#| lable: setup
+#| include: false 
+
+# libraries
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(dplyr)
+library(maps)
+library(mapdata)
+
+#data
+#reading data
+extract <- read.csv("Extract.csv", header = TRUE)
+meta <- read.csv("unicef_metadata.csv", header = TRUE)
+UI2 <- read.csv("UI2.csv", header = TRUE)
+
+#merging the extract and the meta data 
+#step one read the data 
+extract <- read.csv("Extract.csv", header = TRUE)
+meta <- read.csv("unicef_metadata.csv", header = TRUE)
+#step two merge them together based on country
+merged_data <- merge(extract, meta, by = "country")
+
+#merging the UI2 and the meta data 
+#step one read the data 
+UI2 <- read.csv("UI2.csv", header = TRUE)
+meta <- read.csv("unicef_metadata.csv", header = TRUE)
+#step two merge them together based on country
+merged_data2 <- merge(extract, meta, by = "country")
+
+```
+
+## <span style='color:purple'>***World Map***</span>
+```{r}
+#|fig-cap: "This map is a snapshot of the 2021 United Nations investigation into the number of girls married or in union before the age of 18 around the world. The darker the colour, the higher the number."
+  #making a map with the extract
+  #step one install and load the library
+  library(ggplot2)
+  library(maps)
+  library(mapdata)
+  #step two read the file
+  data <- read.csv("Extract.csv", header = TRUE)
+  #step three rewording
+  world_map <- map_data("world")
+  #step four merge 
+  merged_data <- merge(world_map, data, by.x = "region", by.y = "country", all.x = TRUE)    
+  #step five creating the map and adding colour. The darker the colour the higher the observed value.
+  ggplot() +
+    geom_polygon(data = merged_data, aes(x = long, y = lat, group = group, fill = obs_value)) +
+    scale_fill_gradient(low = "lightpink", high = "red", name = "Observation Value") +
+    theme_void() +
+    labs(title = "         The Countries where Girls under the Age of 18 were Married or in Union", subtitle = "     2021") +
+    theme(plot.title = element_text(hjust = 0.5))
+options(scipen = 999)   
+```
+This map is a snapshot of the *2021 United Nations* investigation into the ***Number of Girls Married or in Union Before the Age of 18 Around the World.*** **The darker the colour, the higher the number.**
+
+## <span style='color:purple'>***Bar Chart***</span>
+```{r}
+#|fig-cap: "This bar chart highlights the top five countries the United Nations have obsered where there are girls married or in union before the age of 18"
+#make a bar chart with the five highest observed values in extract
+#step one load 
+library(ggplot2)
+#step two read the data 
+extract <- read.csv("Extract.csv", header = TRUE)
+#step three sort the data 
+top_five <- head(data[order(-data$obs_value), ], 5)
+top_five$country <- factor(top_five$country, levels = c("India", "Bangladesh", "China", "Indonesia", "Nigeria"))
+#step five create the bar chart 
+ggplot(top_five, aes(x = country, y = obs_value, fill = obs_value)) +
+  geom_bar(stat = "identity") +
+  scale_fill_gradient(low = "lightpink", high = "red") + 
+  labs(x = "Country", y = "Number of Girls", title = "Top Five Countries with the Highest Number of Girls Married or in Union", subtitle = "2021") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+options(scipen = 999)
+
+```
+This bar chart highlights the ***top five countries that had the highest number of girl married or union before the age of 18 in 2021*** according to the United Nations.
+Investigating further into *Bangladesh*. According to the United Nations this is a developing country with a below average GDP. Poverty and a lack of education are two reasons why child marriages occur and prehaps a reason for the high level of girls married or in union before the age of 18 in Bangladesh. 
+
+## <span style='color:purple'>***Scatter Plot***</span>
+```{r}
+#|fig-cap: "This scatter plot shows the relationship between GDP and life expectany of the identified countries where girls were married or in union before the age of 18 "
+#making a scatter plot with extract and meta in 2021
+#step one load the library 
+library(ggplot2)
+meta <- read.csv("unicef_metadata.csv", header = TRUE)
+meta_2021.1 <- meta %>% filter(year == 2021)
+
+#step two create the scatter plot 
+ggplot(meta_2021.1, aes(x = GDP.per.capita..constant.2015.US.., y = Life.expectancy.at.birth..total..years., color = country)) +
+  geom_point() +
+  labs(x = "GDP", y = "Life Expectancy", title = "GDP vs Life Expectancy") +
+  geom_line() +
+  geom_smooth(method = "lm", se = FALSE, color = "black") +
+  theme_minimal()+
+  guides(color = FALSE)
+```
+This scatter plot highlights the correlation between the GDP and the Life Expectancy of the countries where there are ***girls marired or union before the age of 18 in 2021***. It must be questioned and perhaps there needs to be further research into the relationship between the *GDP, life expectancy and the number observed*.
+
+## <span style='color:purple'>***Time Series***</span>
+```{r}
+#|fig-cap: "This time series shows the average number of those with HIV in the countries from the top five where girls are married or are in union before the age of 18"
+ #making a time series with UI2
+  # Step one read the data and load libraries
+  library(dplyr)
+  library(ggplot2)
+  UI2 <- read.csv("UI2.csv", header = TRUE)
+  # Step two filter the data for specific countries that match with the extract five countries 
+  filtered_data <- UI2 %>%
+    filter(country %in% c("India", "Bangladesh", "China", "Indonesia", "Nigeria")) %>%
+    group_by(country, time_period) %>%
+    summarise(avg_obs_value = mean(obs_value, na.rm = TRUE))
+  # Step three create the time series plot per country and add colours 
+  ggplot(filtered_data, aes(x = time_period, y = avg_obs_value, group = country, color = country)) +
+    geom_line() +
+    scale_color_manual(values = c("India" = "black", 
+                                  "Bangladesh" = "pink", 
+                                  "China" = "blue", 
+                                  "Indonesia" = "red", 
+                                  "Nigeria" = "green")) +
+    labs(x = "Year", y = "Average Value Observed", title = "Average Number per Year with HIV", subtitle = "2004-2021")
+  
+options(scipen = 999)
+```
+This time series chart shows two of the countries where ***girls are marrired or union before the age of 18 in 2021*** and highlights the average number living with **HIV** from *2004 to 2021*.
+
+
+## <span style='color:purple'>***Other Reasons for Child Marriages ***</span>
+
+- Gender inequality 
+
+- Poverty
+
+- Lack of Education
+
+- Insecurity 
+
+- Social Norms
+
+## <span style='color:purple'>***How do we end Child Marriages?***</span>
+
+- Increase girls' access to education and support
+
+- Educate parents and communities 
+
+- Enforce laws  
+
+## <span style='color:purple'>***Listen to Habiba and her story***</span>
+<span style='color:purple'>*She is only one of millions.*</span>
+{{< video https://www.youtube.com/watch?v=yToMyZLdcEs >}}
+
+
+
+As part of the United Nations Sustainable Development Goals, there is an aim to *end child marriage by 2030*. That is only six years away and nine years since this data was collected. From this report, we have seen that child marriage is prevalent in today's society. Drastic measures will need to be taken as child marriage happens for several reasons and there is no simple fix. **We cannot continue to turn a blind eye to these young girls that suffering and are pressured into marriage and union.**
+
+<span style='color:purple'>***Child marriage is nothing short of cruel, exploitive and oppressive.***</span>
+

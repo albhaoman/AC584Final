@@ -1,0 +1,42 @@
+---
+title: "Test"
+format: html
+---
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+
+#making a scatterplot with extract and meta in 2021
+#step one load the library 
+library(ggplot2)
+#step two create the scatterplot 
+ggplot(meta_2021, aes(x = GDP.per.capita..constant.2015.US.., y = Life.expectancy.at.birth..total..years., color = country)) +
+  geom_point() +
+  labs(x = "GDP", y = "Life Expectancy", title = "GDP vs Life Expectancy") +
+  geom_line() +
+  theme_minimal()+
+  guides(color = FALSE)
+
+```
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this 
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
